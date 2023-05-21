@@ -17,7 +17,7 @@ const Banner = () => {
             <p className="hidden sm:block">Explore new toys from the shop.</p>
             <div>
               <Link
-                to="/login"
+                to="/all-toys"
                 className="text-white bg-[#29DE92] hover:bg-[#32A575] px-7 py-3 rounded-md"
               >
                 Shop Now
