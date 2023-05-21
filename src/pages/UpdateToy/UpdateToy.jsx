@@ -45,13 +45,16 @@ const UpdateToy = () => {
       description,
     };
     // console.log(toyName, sellerName, sellerEmail, description);
-    fetch(`https://y-sigma-snowy.vercel.app/toy/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(toy),
-    })
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-abumotaleb99.vercel.app/toy/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(toy),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

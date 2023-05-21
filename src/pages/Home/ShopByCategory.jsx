@@ -6,7 +6,9 @@ const ShopByCategory = () => {
   const [activeTab, setActiveTab] = useState("All");
 
   useEffect(() => {
-    fetch(`https://y-sigma-snowy.vercel.app/allToysByCategory/${activeTab}`)
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-abumotaleb99.vercel.app/allToysByCategory/${activeTab}`
+    )
       .then((res) => res.json())
       .then((result) => {
         setToys(result);

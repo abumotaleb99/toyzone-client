@@ -42,13 +42,17 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://y-sigma-snowy.vercel.app/view-toy/${params.id}`),
+          fetch(
+            `https://b7a11-toy-marketplace-server-side-abumotaleb99.vercel.app/view-toy/${params.id}`
+          ),
       },
       {
         path: "/update-toy/:id",
         element: <UpdateToy></UpdateToy>,
         loader: ({ params }) =>
-          fetch(`https://y-sigma-snowy.vercel.app/toy/${params.id}`),
+          fetch(
+            `https://b7a11-toy-marketplace-server-side-abumotaleb99.vercel.app/toy/${params.id}`
+          ),
       },
       {
         path: "/login",

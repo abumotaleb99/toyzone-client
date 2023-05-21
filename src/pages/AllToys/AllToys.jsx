@@ -14,7 +14,9 @@ const AllToys = () => {
   const handleSearch = (value) => {
     setSearchText(value);
 
-    fetch(`https://y-sigma-snowy.vercel.app/getToysBySearch/${searchText}`)
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-abumotaleb99.vercel.app/getToysBySearch/${searchText}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -22,7 +24,9 @@ const AllToys = () => {
   };
 
   useEffect(() => {
-    fetch("https://y-sigma-snowy.vercel.app/all-toys")
+    fetch(
+      "https://b7a11-toy-marketplace-server-side-abumotaleb99.vercel.app/all-toys"
+    )
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);

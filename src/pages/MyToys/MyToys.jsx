@@ -13,7 +13,9 @@ const MyToys = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch(`https://y-sigma-snowy.vercel.app/my-toys/${user?.email}`)
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-abumotaleb99.vercel.app/my-toys/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -31,9 +33,12 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://y-sigma-snowy.vercel.app/toy/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://b7a11-toy-marketplace-server-side-abumotaleb99.vercel.app/toy/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

@@ -33,13 +33,16 @@ const AddToy = () => {
       description,
     };
 
-    fetch("https://y-sigma-snowy.vercel.app/post-toy", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(toy),
-    })
+    fetch(
+      "https://b7a11-toy-marketplace-server-side-abumotaleb99.vercel.app/post-toy",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(toy),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
