@@ -40,30 +40,34 @@ const Navbar = () => {
           All Toys
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/my-toys"
-          className={({ isActive }) =>
-            isActive
-              ? "text-[#29DE92] px-2 mx-1"
-              : "hover:text-[#29DE92] px-2 mx-1"
-          }
-        >
-          My Toys
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/add-toy"
-          className={({ isActive }) =>
-            isActive
-              ? "text-[#29DE92] px-2 mx-1"
-              : "hover:text-[#29DE92] px-2 mx-1"
-          }
-        >
-          Add A Toy
-        </NavLink>
-      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink
+              to="/my-toys"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#29DE92] px-2 mx-1"
+                  : "hover:text-[#29DE92] px-2 mx-1"
+              }
+            >
+              My Toys
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/add-toy"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#29DE92] px-2 mx-1"
+                  : "hover:text-[#29DE92] px-2 mx-1"
+              }
+            >
+              Add A Toy
+            </NavLink>
+          </li>
+        </>
+      )}
       <li>
         <NavLink
           to="/blogs"
