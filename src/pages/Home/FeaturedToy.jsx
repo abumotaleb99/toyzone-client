@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
 
-const Toy = ({ toy }) => {
-  const { _id, toyName, photoUrl, price, rating } = toy;
+const FeaturedToy = ({ featuredToy }) => {
+  const { _id, toyName, photoUrl, price, rating } = featuredToy;
+
   return (
     <div className="bg-[#F5F5F5] rounded-lg px-5 pt-5 pb-3">
       <div>
@@ -33,4 +34,4 @@ const Toy = ({ toy }) => {
   );
 };
 
-export default Toy;
+export default FeaturedToy;
