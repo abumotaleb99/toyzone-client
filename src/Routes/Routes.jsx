@@ -42,12 +42,13 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/view-toy/${params.id}`),
+          fetch(`https://y-sigma-snowy.vercel.app/view-toy/${params.id}`),
       },
       {
         path: "/update-toy/:id",
         element: <UpdateToy></UpdateToy>,
-        loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://y-sigma-snowy.vercel.app/toy/${params.id}`),
       },
       {
         path: "/login",

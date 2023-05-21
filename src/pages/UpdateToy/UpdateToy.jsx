@@ -45,7 +45,7 @@ const UpdateToy = () => {
       description,
     };
     // console.log(toyName, sellerName, sellerEmail, description);
-    fetch(`http://localhost:5000/toy/${_id}`, {
+    fetch(`https://y-sigma-snowy.vercel.app/toy/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

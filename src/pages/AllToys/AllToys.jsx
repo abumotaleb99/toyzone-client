@@ -14,7 +14,7 @@ const AllToys = () => {
   const handleSearch = (value) => {
     setSearchText(value);
 
-    fetch(`http://localhost:5000/getToysBySearch/${searchText}`)
+    fetch(`https://y-sigma-snowy.vercel.app/getToysBySearch/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -22,7 +22,7 @@ const AllToys = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-toys")
+    fetch("https://y-sigma-snowy.vercel.app/all-toys")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);

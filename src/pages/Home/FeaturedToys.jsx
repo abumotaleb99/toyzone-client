@@ -5,7 +5,7 @@ const FeaturedToys = () => {
   const [featuredToys, setFeaturedToys] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/all-toys`)
+    fetch(`https://y-sigma-snowy.vercel.app/all-toys`)
       .then((res) => res.json())
       .then((result) => {
         setFeaturedToys(result);

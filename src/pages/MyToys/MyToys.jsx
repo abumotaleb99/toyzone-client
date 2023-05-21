@@ -13,7 +13,7 @@ const MyToys = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/my-toys/${user?.email}`)
+    fetch(`https://y-sigma-snowy.vercel.app/my-toys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -31,7 +31,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toy/${_id}`, {
+        fetch(`https://y-sigma-snowy.vercel.app/toy/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
