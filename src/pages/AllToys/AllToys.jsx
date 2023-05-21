@@ -5,6 +5,17 @@ import Toy from "./Toy";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
+  const [searchText, setSearchText] = useState("");
+
+  const handleSearch = (value) => {
+    setSearchText(value);
+
+    fetch(`http://localhost:5000/getToysBySearch/${searchText}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setToys(data);
+      });
+  };
 
   useEffect(() => {
     fetch("http://localhost:5000/all-toys")
@@ -21,6 +32,7 @@ const AllToys = () => {
             <FaSearch />
           </span>
           <input
+            onChange={(e) => handleSearch(e.target.value)}
             placeholder="Search"
             className="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none"
           />

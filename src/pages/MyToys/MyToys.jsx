@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Toy from "./Toy";
-import { FaSearch } from "react-icons/fa";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
+
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
@@ -18,17 +18,6 @@ const MyToys = () => {
   return (
     <div className="max-w-7xl mx-auto py-4">
       <h3 className="text-2xl md:text-3xl font-bold px-4 sm:px-0">My Toys</h3>
-      <div className=" flex mt-3 px-4 sm:px-0">
-        <div className="block relative">
-          <span className="h-full absolute inset-y-0 left-0 flex items-center pl-2">
-            <FaSearch />
-          </span>
-          <input
-            placeholder="Search"
-            className="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none"
-          />
-        </div>
-      </div>
       <div className="sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
         <div className="inline-block min-w-full shadow rounded-md overflow-hidden">
           <table className="min-w-full">
