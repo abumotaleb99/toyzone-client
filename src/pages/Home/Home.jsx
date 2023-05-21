@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import Gallery from "./Gallery";
 import ShopByCategory from "./ShopByCategory";
 import FeaturedToys from "./FeaturedToys";
+import Services from "./Services";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Gallery></Gallery>
       <ShopByCategory></ShopByCategory>
       <FeaturedToys></FeaturedToys>
+      <Services></Services>
     </>
   );
 };
