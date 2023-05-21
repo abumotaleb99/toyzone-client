@@ -24,10 +24,13 @@ const Toy = ({ toy, handleDelete }) => {
         <p>{quantity}</p>
       </td>
       <td className="px-4 py-4 border-b text-sm">
-        <Link className="text-white bg-[#29DE92] hover:bg-[#32A575] px-3 py-2 rounded-sm">
+        <Link className="text-white bg-[#ceece0] hover:bg-[#32A575] px-3 py-2 rounded-sm">
           View
         </Link>
-        <Link className="text-white bg-[#1a1aff] hover:bg-[#0000cc] px-3 py-2 rounded-sm mx-1">
+        <Link
+          to={`../update-toy/${_id}`}
+          className="text-white bg-[#1a1aff] hover:bg-[#0000cc] px-3 py-2 rounded-sm mx-1"
+        >
           Edit
         </Link>
         <button
