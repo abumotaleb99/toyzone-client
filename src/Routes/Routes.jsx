@@ -9,6 +9,7 @@ import AllToys from "../pages/AllToys/AllToys";
 import UpdateToy from "../pages/UpdateToy/UpdateToy";
 import Blogs from "../pages/Blogs/Blogs";
 import ViewToy from "../pages/ViewToy/ViewToy";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/view-toy/:id",
-        element: <ViewToy></ViewToy>,
+        element: (
+          <PrivateRoute>
+            <ViewToy></ViewToy>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/view-toy/${params.id}`),
       },

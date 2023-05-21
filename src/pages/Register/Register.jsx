@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
@@ -8,6 +8,10 @@ import { FaGoogle } from "react-icons/fa";
 const auth = getAuth(app);
 
 const Register = () => {
+  useEffect(() => {
+    document.title = "ToyZone | Register";
+  }, []);
+
   const { createUser, googleSignIn } = useContext(AuthContext);
 
   const [error, setError] = useState("");

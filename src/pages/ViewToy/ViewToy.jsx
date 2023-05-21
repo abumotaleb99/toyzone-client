@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
 
 const ViewToy = () => {
+  useEffect(() => {
+    document.title = "ToyZone | View Toy";
+  }, []);
+
   const toy = useLoaderData();
   const {
     _id,

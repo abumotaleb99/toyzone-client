@@ -4,6 +4,10 @@ import Toy from "./Toy";
 import Swal from "sweetalert2";
 
 const MyToys = () => {
+  useEffect(() => {
+    document.title = "ToyZone | My Toys";
+  }, []);
+
   const { user } = useContext(AuthContext);
 
   const [toys, setToys] = useState([]);

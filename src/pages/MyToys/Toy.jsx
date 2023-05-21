@@ -26,7 +26,7 @@ const Toy = ({ toy, handleDelete }) => {
       <td className="px-4 py-4 border-b text-sm">
         <Link
           to={`../view-toy/${_id}`}
-          className="text-white bg-[#ceece0] hover:bg-[#32A575] px-3 py-2 rounded-sm"
+          className="text-white bg-[#29DE92] hover:bg-[#32A575] px-3 py-2 rounded-sm"
         >
           View
         </Link>

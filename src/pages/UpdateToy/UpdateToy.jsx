@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateToy = () => {
+  useEffect(() => {
+    document.title = "ToyZone | Update Toy";
+  }, []);
+
   const toy = useLoaderData();
   const {
     _id,

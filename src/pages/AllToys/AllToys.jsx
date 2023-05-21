@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import Toy from "./Toy";
 
 const AllToys = () => {
+  useEffect(() => {
+    document.title = "ToyZone | All Toys";
+  }, []);
+
   const [toys, setToys] = useState([]);
   const [searchText, setSearchText] = useState("");
 
