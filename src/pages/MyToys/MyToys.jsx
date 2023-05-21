@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Toy from "./Toy";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -14,6 +15,34 @@ const MyToys = () => {
         setToys(data);
       });
   }, [user]);
+
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/toy/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Toy has been deleted.", "success");
+
+              const remaining = toys.filter((toy) => toy._id !== _id);
+              setToys(remaining);
+            }
+          });
+      }
+    });
+  };
 
   return (
     <div className="max-w-7xl mx-auto py-4">
@@ -43,7 +72,7 @@ const MyToys = () => {
             </thead>
             <tbody>
               {toys.map((toy) => (
-                <Toy key={toy._id} toy={toy}></Toy>
+                <Toy key={toy._id} toy={toy} handleDelete={handleDelete}></Toy>
               ))}
             </tbody>
           </table>

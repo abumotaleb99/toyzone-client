@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Toy = ({ toy }) => {
-  const { sellerName, toyName, subcategory, price, quantity } = toy;
+const Toy = ({ toy, handleDelete }) => {
+  const { _id, sellerName, toyName, subcategory, price, quantity } = toy;
 
   return (
     <tr>
@@ -30,7 +30,10 @@ const Toy = ({ toy }) => {
         <Link className="text-white bg-[#1a1aff] hover:bg-[#0000cc] px-3 py-2 rounded-sm mx-1">
           Edit
         </Link>
-        <button className="text-white bg-[#FF0000] hover:bg-[#A30000] px-3 py-2 rounded-sm">
+        <button
+          onClick={() => handleDelete(_id)}
+          className="text-white bg-[#FF0000] hover:bg-[#A30000] px-3 py-2 rounded-sm"
+        >
           Delete
         </button>
       </td>
