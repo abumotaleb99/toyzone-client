@@ -6,27 +6,33 @@ const Toy = ({ toy }) => {
 
   return (
     <tr>
-      <td class="px-4 py-4 border-b text-sm">
+      <td className="px-4 py-4 border-b text-sm">
         <p>{sellerName}</p>
       </td>
-      <td class="px-4 py-4 border-b text-sm">
+      <td className="px-4 py-4 border-b text-sm">
         <p>{toyName}</p>
       </td>
-      <td class="px-4 py-4 border-b text-sm">
+      <td className="px-4 py-4 border-b text-sm">
         <p>{subcategory}</p>
       </td>
-      <td class="px-4 py-4 border-b text-sm">
+      <td className="px-4 py-4 border-b text-sm">
         <p>
           <span>{price} </span>TK
         </p>
       </td>
-      <td class="px-4 py-4 border-b text-sm">
+      <td className="px-4 py-4 border-b text-sm">
         <p>{quantity}</p>
       </td>
-      <td class="px-4 py-4 border-b text-sm">
+      <td className="px-4 py-4 border-b text-sm">
         <Link className="text-white bg-[#29DE92] hover:bg-[#32A575] px-3 py-2 rounded-sm">
-          View Details
+          View
         </Link>
+        <Link className="text-white bg-[#1a1aff] hover:bg-[#0000cc] px-3 py-2 rounded-sm mx-1">
+          Edit
+        </Link>
+        <button className="text-white bg-[#FF0000] hover:bg-[#A30000] px-3 py-2 rounded-sm">
+          Delete
+        </button>
       </td>
     </tr>
   );
