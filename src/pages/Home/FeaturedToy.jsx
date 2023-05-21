@@ -24,7 +24,7 @@ const FeaturedToy = ({ featuredToy }) => {
           <span>{price}</span> TK
         </p>
         <Link
-          to=""
+          to={`/view-toy/${_id}`}
           className="w-full block text-center text-white bg-[#29DE92] hover:bg-[#32A575] rounded-md px-7 py-2"
         >
           View Toy

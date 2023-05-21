@@ -24,7 +24,10 @@ const Toy = ({ toy, handleDelete }) => {
         <p>{quantity}</p>
       </td>
       <td className="px-4 py-4 border-b text-sm">
-        <Link className="text-white bg-[#ceece0] hover:bg-[#32A575] px-3 py-2 rounded-sm">
+        <Link
+          to={`../view-toy/${_id}`}
+          className="text-white bg-[#ceece0] hover:bg-[#32A575] px-3 py-2 rounded-sm"
+        >
           View
         </Link>
         <Link
