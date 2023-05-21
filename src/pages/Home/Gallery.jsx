@@ -12,14 +12,22 @@ const Gallery = () => {
         Toy Gallery
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
-        <div className="w-full">
+        <div data-aos="zoom-in-up" className="w-full">
           <img src={img1} className="w-full h-full" alt="" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
-          <img src={img2} className="w-full h-full" alt="" />
-          <img src={img3} className="w-full h-full" alt="" />
-          <img src={img4} className="w-full h-full" alt="" />
-          <img src={img5} className="w-full h-full" alt="" />
+          <div data-aos="zoom-in-up">
+            <img src={img2} className="w-full h-full" alt="" />
+          </div>
+          <div data-aos="zoom-in-up">
+            <img src={img3} className="w-full h-full" alt="" />
+          </div>
+          <div data-aos="zoom-in-up">
+            <img src={img4} className="w-full h-full" alt="" />
+          </div>
+          <div data-aos="zoom-in-up">
+            <img src={img5} className="w-full h-full" alt="" />
+          </div>
         </div>
       </div>
     </div>
