@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const navItems = (
     <>
       <li>
@@ -104,20 +115,33 @@ const Navbar = () => {
           <ul className=" menu-horizontal px-1">{navItems}</ul>
         </div>
         <div className="navbar-end">
-          <label
-            tabIndex={0}
-            className="btn btn-ghost btn-circle avatar hover:bg-[#32A575] mr-2 md:mr-3"
-          >
-            <div className="w-10 rounded-full">
-              <img src="" alt="" />
-            </div>
-          </label>
-          <Link
-            to="/login"
-            className="text-white bg-[#29DE92] hover:bg-[#32A575] px-7 py-2 rounded-md"
-          >
-            Login
-          </Link>
+          {user ? (
+            <button
+              onClick={handleLogOut}
+              className="text-white bg-[#29DE92] hover:bg-[#32A575] px-7 py-2 rounded-md"
+            >
+              LogOut
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              className="text-white bg-[#29DE92] hover:bg-[#32A575] px-7 py-2 rounded-md"
+            >
+              Login
+            </Link>
+          )}
+          <>
+            {user && (
+              <label
+                tabIndex={0}
+                className="btn btn-ghost btn-circle avatar hover:bg-[#32A575] mr-2 md:ms-2"
+              >
+                <div className="w-10 rounded-full">
+                  <img src={user.photoURL} title={user.displayName} />
+                </div>
+              </label>
+            )}
+          </>
         </div>
       </div>
     </div>
