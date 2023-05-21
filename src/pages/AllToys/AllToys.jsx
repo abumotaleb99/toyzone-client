@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaSearch, FaArrowUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Toy from "./Toy";
 
 const AllToys = () => {
+  const [toys, setToys] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/all-toys")
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+  }, []);
+
   return (
     <div className="max-w-7xl mx-auto py-4">
       <h3 className="text-2xl md:text-3xl font-bold px-4 sm:px-0">All Toys</h3>
@@ -41,30 +50,9 @@ const AllToys = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="px-4 py-4 border-b text-sm">
-                  <p>Abu Motaleb</p>
-                </td>
-                <td class="px-4 py-4 border-b text-sm">
-                  <p>American Fire Tractor</p>
-                </td>
-                <td class="px-4 py-4 border-b text-sm">
-                  <p>Fire Tractor</p>
-                </td>
-                <td class="px-4 py-4 border-b text-sm">
-                  <p>
-                    <span>500 </span>TK
-                  </p>
-                </td>
-                <td class="px-4 py-4 border-b text-sm">
-                  <p>50</p>
-                </td>
-                <td class="px-4 py-4 border-b text-sm">
-                  <Link className="text-white bg-[#29DE92] hover:bg-[#32A575] px-3 py-2 rounded-sm">
-                    View
-                  </Link>
-                </td>
-              </tr>
+              {toys.map((toy) => (
+                <Toy key={toy._id} toy={toy}></Toy>
+              ))}
             </tbody>
           </table>
         </div>
